@@ -11,7 +11,7 @@ class GenerateSQL {
      * @param array $hidden
      * @return string $sqlCommand
      */
-    static function aliasColname($table, $columns, $hidden) {
+    static function aliasColname($columns, $hidden) {
 
         $alias = [];
 

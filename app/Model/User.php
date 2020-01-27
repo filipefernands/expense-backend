@@ -26,7 +26,7 @@ class User extends Model {
     protected $hidden = ['password'];
 
     public function getAllUsers($isBlocked = false) {
-        $colNames = SQL::aliasColname($this->table, $this->fillable, $this->hidden);
+        $colNames = SQL::aliasColname($this->fillable, $this->hidden);
 
         if ($isBlocked) {
             $users = DB::table('users')->select($colNames)->get();
@@ -38,7 +38,7 @@ class User extends Model {
     }
 
     public function getUser($id) {
-        $colNames = SQL::aliasColname($this->table, $this->fillable, $this->hidden);
+        $colNames = SQL::aliasColname($this->fillable, $this->hidden);
         $user = DB::table('users')->select($colNames)->where('id', $id)->get();
 
         return json_encode($user[0]);
