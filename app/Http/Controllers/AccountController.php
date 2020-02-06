@@ -14,7 +14,11 @@ class AccountController extends Controller {
     }
 
     public function getAllAccount() {
-        
+        return response($this->account->getAllAccounts(), 200)->header('Content-type', 'application/json');
+    }
+
+    public function getAccount($id) {
+        return response($this->account->getAccount($id), 200)->header('Content-Type', 'application/json');
     }
 
     public function createAccount(Request $request) {

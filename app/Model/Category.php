@@ -12,7 +12,7 @@ class Category extends Model {
     
     protected $table =  "category";
 
-    protected $fillable = ['id', 'name', 'inactive'];
+    protected $fillable = ['id', 'name', 'active'];
 
     protected $hidden = [];
 

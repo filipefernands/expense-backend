@@ -9,9 +9,9 @@ use App\Utils\GenerateSQL as SQL;
 
 class SubCategory extends Model {
     
-    protected $table = "sub_category";
+    protected $table = "subcategory";
 
-    protected $fillable = ['id', 'name', 'category_id', 'inactive'];
+    protected $fillable = ['id', 'name', 'category_id', 'active'];
 
     protected $hidden = [];
 

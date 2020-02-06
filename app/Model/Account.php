@@ -11,7 +11,7 @@ class Account extends Model {
 
     protected $table = "account";
 
-    protected $fillable = ['id', 'name', 'inactive'];
+    protected $fillable = ['id', 'name', 'active'];
 
     protected $hidden = [];
 

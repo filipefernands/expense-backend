@@ -1,6 +1,6 @@
 <?php
 
-require_once ('resource.php');
+include ('resource.php');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -16,35 +16,34 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->group(['prefix' => resource::BASE], function() use ($router) {
+$router->group(['prefix' => API], function() use ($router) {
 
     # User
-    $router->get(resource::GET_ALL_USERS, 'UserController@getAllUsers');
-    $router->get(resource::GET_USER, 'UserController@getUser');
-    $router->post(resource::CREATE_USER, 'UserController@createUser');
-    $router->put(resource::UPDATE_USER, 'UserController@updateUser');
-    $router->post(resource::CHANGE_PASSWORD, 'UserController@changePassword');
-    $router->delete(resource::DELETE_USER, 'UserController@deleteUser');
+    $router->get(GET_ALL_USERS, 'UserController@getAllUsers');
+    $router->get(GET_USER, 'UserController@getUser');
+    $router->post(CREATE_USER, 'UserController@createUser');
+    $router->put(UPDATE_USER, 'UserController@updateUser');
+    $router->post(CHANGE_PASSWORD, 'UserController@changePassword');
+    $router->delete(DELETE_USER, 'UserController@deleteUser');
 
     # Account
-    $router->get(resource::GET_ALL_ACCOUNTS, 'AccountController@getAllAccount');
-    $router->get(resource::GET_ACCOUNT, 'AccountController@getAccount');
-    $router->post(resource::CREATE_ACCOUNT, 'AccountController@createAccount');
-    $router->put(resource::UPDATE_ACCOUNT, 'AccountController@updateAccount');
-    $router->delete(resource::DELETE_ACCOUNT, 'AccountController@deleteAccount');
+    $router->get(GET_ALL_ACCOUNTS, 'AccountController@getAllAccount');
+    $router->get(GET_ACCOUNT, 'AccountController@getAccount');
+    $router->post(CREATE_ACCOUNT, 'AccountController@createAccount');
+    $router->put(UPDATE_ACCOUNT, 'AccountController@updateAccount');
+    $router->delete(DELETE_ACCOUNT, 'AccountController@deleteAccount');
 
     # Category
-    $router->get(resource::GET_ALL_CATEGORIES, 'CategoryController@listAllCategories');
-    $router->get(resource::GET_CATEGORY, 'CategoryController@getCategory');
-    $router->post(resource::CREATE_CATEGORY, 'CategoryController@createCategory');
-    $router->put(resource::UPDATE_CATEGORY, 'CategoryController@updateCategory');
-    $router->delete(resource::DELETE_CATEGORY, 'CategoryController@deleteCategory');
+    $router->get(GET_ALL_CATEGORIES, 'CategoryController@listAllCategories');
+    $router->get(GET_CATEGORY, 'CategoryController@getCategory');
+    $router->post(CREATE_CATEGORY, 'CategoryController@createCategory');
+    $router->put(UPDATE_CATEGORY, 'CategoryController@updateCategory');
+    $router->delete(DELETE_CATEGORY, 'CategoryController@deleteCategory');
 
     # Subcategories
-    $router->get(resource::GET_ALL_SUBCATEGORIES, 'SubCategoryController@listAllCategories');
-    $router->get(resource::GET_SUBCATEGORY, 'SubCategoryController@getSubCategory');
-    $router->post(resource::CREATE_SUBCATEGORY, 'SubCategoryController@createSubcategory');
-    $router->put(resource::UPDATE_SUBCATEGORY, 'SubCategoryController@updateCategory');
-    $router->delete(resource::DELETE_SUBCATEGORY, 'SubCategoryController@deleteSubcategory');
+    $router->get(GET_ALL_SUBCATEGORIES, 'SubCategoryController@listAllCategories');
+    $router->get(GET_SUBCATEGORY, 'SubCategoryController@getSubCategory');
+    $router->post(CREATE_SUBCATEGORY, 'SubCategoryController@createSubcategory');
+    $router->put(UPDATE_SUBCATEGORY, 'SubCategoryController@updateCategory');
+    $router->delete(DELETE_SUBCATEGORY, 'SubCategoryController@deleteSubcategory');
 });
-

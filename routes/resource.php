@@ -1,36 +1,32 @@
 <?php
+require_once('endpoint.php');
+# API
+define("API", "expense/api");
 
-class resource {
-    
-    const BASE = "expense/api";
+define("GET_ALL_USERS", endpoint::endpointFactory('user', 'listUsers')['query']);
+define("GET_USER", endpoint::endpointFactory('user', 'getUser/{id}')['query']);
+define("CREATE_USER", endpoint::endpointFactory('user', 'createUser')['action']);
+define("UPDATE_USER", endpoint::endpointFactory('user', 'updateUser')['action']);
+define("DELETE_USER", endpoint::endpointFactory('user', 'deleteUser/{id}')['action']);
+define("CHANGE_PASSWORD", endpoint::endpointFactory('user', 'changePassword')['action']);
 
-    # Users
-    const CREATE_USER = "/user/createUser";
-    const UPDATE_USER = "/user/updateUser";
-    const DELETE_USER = "/user/deleteUser/{id}";
-    const GET_ALL_USERS = "/user/listUsers";
-    const GET_USER = "/user/getUser/{id}";
-    const CHANGE_PASSWORD = '/user/changePassword';
+# Accounts
+define("GET_ALL_ACCOUNTS", endpoint::endpointFactory('account', 'listAccounts')['query']);
+define("GET_ACCOUNT", endpoint::endpointFactory('account', 'getAccount/{id}')['query']);
+define("CREATE_ACCOUNT", endpoint::endpointFactory('account', 'createAccount')['action']);
+define("UPDATE_ACCOUNT", endpoint::endpointFactory('account', 'updateAccount')['action']);
+define("DELETE_ACCOUNT", endpoint::endpointFactory('account', 'deleteAccount/{id}')['action']);
 
-    # Account 
-    const GET_ALL_ACCOUNTS = "/account/listAccounts";
-    const GET_ACCOUNT = "/account/getAccout/{id}";
-    const CREATE_ACCOUNT = "/account/createAccount";
-    const UPDATE_ACCOUNT = "/account/updateAccount";
-    const DELETE_ACCOUNT = "/account/deleteAccount/{id}";
+# Categories
+define("GET_ALL_CATEGORIES", endpoint::endpointFactory('category', 'listCategories')['query']);
+define("GET_CATEGORY", endpoint::endpointFactory('category', 'getCategory/{id}')['query']);
+define("CREATE_CATEGORY", endpoint::endpointFactory('category', 'createCategory')['action']);
+define("UPDATE_CATEGORY", endpoint::endpointFactory('category', 'updateCategory')['action']);
+define("DELETE_CATEGORY", endpoint::endpointFactory('category', 'deleteCategory/{id}')['action']);
 
-    # Categories
-    const GET_ALL_CATEGORIES = "/category/listCategories";
-    const GET_CATEGORY = "/category/getCategory/{id}";
-    const CREATE_CATEGORY = "/category/createCategory";
-    const UPDATE_CATEGORY = "/category/updateCategory";
-    const DELETE_CATEGORY = "/category/deleteCategory/{id}";
-
-    # Sub categories
-    const GET_ALL_SUBCATEGORIES = "/subcategory/listSubcategories";
-    const GET_SUBCATEGORY = "/subcategory/getSubCategory/{id}";
-    const CREATE_SUBCATEGORY = "/subcategory/createSubcategory";
-    const UPDATE_SUBCATEGORY = "/subcategory/updateSubcategory";
-    const DELETE_SUBCATEGORY = "/subcategory/deleteSubcategory/{id}";    
-    
-}
+# Subacategory
+define("GET_ALL_SUBCATEGORIES", endpoint::endpointFactory('subcategory', 'listSubcategories')['query']);
+define("GET_SUBCATEGORY", endpoint::endpointFactory('subcategory', 'getSubCategory/{id}')['query']);
+define("CREATE_SUBCATEGORY", endpoint::endpointFactory('subcategory', 'createSubcategory')['action']);
+define("UPDATE_SUBCATEGORY", endpoint::endpointFactory('subcategory', 'updateSubcategory')['action']);
+define("DELETE_SUBCATEGORY", endpoint::endpointFactory('subcategory', 'deleteSubcategory/{id}')['action']);

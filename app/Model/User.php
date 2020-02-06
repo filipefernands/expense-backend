@@ -19,7 +19,7 @@ class User extends Model {
         'username',
         'email',
         'password',
-        'is_blocked',
+        'blocked',
         'change_password'
     ];
 
